@@ -44,6 +44,7 @@
     };
   } else if (page.id === 'page2') {
     page.querySelector('ons-toolbar .center').innerHTML = page.data.title;
+    navigator.geolocation.getCurrentPosition(showPosition);
   }
 });
 </script>
