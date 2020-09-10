@@ -35,8 +35,7 @@
   var page = event.target;
   
     function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-  "<br>Longitude: " + position.coords.longitude;
+      page.querySelector('#latlng') = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
     
   if (page.id === 'page1') {
     page.querySelector('#push-button').onclick = function() {
