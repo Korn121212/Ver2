@@ -14,7 +14,7 @@
       <div class="center">Page 1</div>
     </ons-toolbar>
 
-    <p>This is the first page.</p>
+    <p id="latlng">This is the first page.</p>
 
     <ons-button id="push-button">Push page</ons-button>
   </ons-page>
@@ -33,7 +33,11 @@
 <script>
   document.addEventListener('init', function(event) {
   var page = event.target;
-
+  
+    function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+    
   if (page.id === 'page1') {
     page.querySelector('#push-button').onclick = function() {
       document.querySelector('#myNavigator').pushPage('page2.html', {data: {title: 'Page 2'}});
